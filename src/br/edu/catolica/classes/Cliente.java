@@ -2,8 +2,6 @@ package br.edu.catolica.classes;
 
 import java.io.Serializable;
 
-
-
 public class Cliente implements Serializable {
     private String nome, cpf, senha;
 

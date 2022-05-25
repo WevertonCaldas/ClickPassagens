@@ -105,11 +105,10 @@ public class ObjetoPassagem extends UnicastRemoteObject implements Corrida{
             rs = stt.executeQuery("SELECT * FROM cliente");
 
             while(rs.next() && !procurar.equals("Encontrado")) {
-                System.out.println("deu ruim");
                 String cpf = rs.getString("cpf");
                 String senha = rs.getString("senha");
-                if(cpf.equals(cliente.getCPF())){
-                    System.out.println("correto");
+
+                if(cpf.equals(cliente.getCPF()) && senha.equals(cliente.getSenha())){
                     procurar = "Encontrado";
                     login = true;
                 }
@@ -142,7 +141,7 @@ public class ObjetoPassagem extends UnicastRemoteObject implements Corrida{
                 cpf = rs.getString("cpf");
                 senha = rs.getString("senha");
 
-                if(cpf.equals(prestadorDeServico.getCPF())){
+                if(cpf.equals(prestadorDeServico.getCPF()) && senha.equals(prestadorDeServico.getSenha())){
                     procurar = "Encontrado";
                     login = true;
                 }

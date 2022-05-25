@@ -46,7 +46,7 @@ public class programa extends ObjetoPassagem {
                     System.out.println("Digite 'Sair' para fechar ou qualquer tecla para continuar");
                     String opcao = scanner.nextLine();
 
-                    while(!opcao.equals("Sair")){
+                    while(!opcao.equalsIgnoreCase("Sair")){
                         ArrayList <Passagem> passagem = obj.mostrarPassagem();
                         System.out.println("PASSAGENS");
                         for (int i=0; i < passagem.size(); i++){
@@ -87,10 +87,10 @@ public class programa extends ObjetoPassagem {
                 boolean cadastro = obj.cadastrarPrestadorServico(new PrestadorDeServico(nome, registrocnh, cpf, senha));
 
                 if (cadastro){
-                    System.out.println("Digite 'Sair' para fechar ou qualquer tecla para continuar");
+                    System.out.println("Digite 'Sair' para fechar ou qualquer tecla para cadastrar uma passagem");
                     String opcao = scanner.nextLine();
 
-                    while(!opcao.equals("Sair")){
+                    while(!opcao.equalsIgnoreCase("Sair")){
                         int id = new Random().nextInt();
                         System.out.println("Origem: ");
                         String origem = scanner.nextLine();
@@ -125,7 +125,7 @@ public class programa extends ObjetoPassagem {
                 boolean login = obj.loginCliente(new Cliente(cpf,senha));
 
                 while (!login){
-                    System.out.println("xxxxxx CPF NÃO ENCONTRADO. xxxxxx\n----Digite os dados novamente----");
+                    System.out.println("xxxxxx DADOS INCORRETOS. xxxxxx\n----Digite os dados novamente----");
                     System.out.println("CPF: ");
                     cpf = scanner.nextLine();
                     System.out.println("Senha: ");
@@ -135,7 +135,7 @@ public class programa extends ObjetoPassagem {
                 System.out.println("Digite 'Sair' para fechar ou qualquer tecla para continuar");
                 String opcao = scanner.nextLine();
 
-                while(!opcao.equals("Sair")){
+                while(!opcao.equalsIgnoreCase("Sair")){
                     ArrayList <Passagem> passagem = obj.mostrarPassagem();
                     System.out.println("PASSAGENS");
                     for (int i=0; i < passagem.size(); i++){
@@ -169,7 +169,7 @@ public class programa extends ObjetoPassagem {
                 boolean login = obj.loginPrestadorServico(new PrestadorDeServico(cpf,senha));
 
                 while (!login){
-                    System.out.println("xxxxxx CPF NÃO ENCONTRADO. xxxxxx\n----Digite os dados novamente----");
+                    System.out.println("xxxxxx DADOS INCORRETOS. xxxxxx\n----Digite os dados novamente----");
                     System.out.println("CPF: ");
                     cpf = scanner.nextLine();
                     System.out.println("Senha: ");
@@ -177,10 +177,10 @@ public class programa extends ObjetoPassagem {
                     login = obj.loginCliente(new Cliente(cpf,senha));
 
                 }
-                System.out.println("Digite 'Sair' para fechar ou qualquer tecla para continuar");
+                System.out.println("Digite 'Sair' para fechar ou qualquer tecla para cadastrar uma passagem");
                 String opcao = scanner.nextLine();
 
-                while(!opcao.equals("Sair")){
+                while(!opcao.equalsIgnoreCase("Sair")){
                     int id = new Random().nextInt();
                     System.out.println("Origem: ");
                     String origem = scanner.nextLine();
